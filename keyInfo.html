@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get keyboard key-codes by presssing keys."
+    <link href="
+https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
+    <title>🏁 || Keyboard Info</title>
+    <style>
+        #key-pressed {
+            margin: 20px auto;
+            display: block;
+            box-shadow: 2px 3px 2px #bbb;
+            width: 50px;
+            height: 35px;
+            background-color: #bab;
+            font-size: 25px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Press a key to see it's value.</h1>
+    <div id="key-value" style="font-size: 350px; text-align: center;">
+        65
+    </div>
+    <div style="text-align: center;">Key pressed is: </div>
+    <div id="key-pressed">A</div>
+</body>
+<script type="text/javascript">
+    const keyVal = document.getElementById('key-value');
+    const keyContent = document.getElementById('key-pressed');
+    window.document.addEventListener('keydown', (e)=>{
+        e.preventDefault();
+        keyVal.innerHTML = "";
+        keyContent.innerHTML = "";
+        const data = e.keyCode;
+        keyVal.innerHTML = data;
+        keyContent.innerHTML = e.key.toUpperCase();
+    })
+</script>
+</html>
